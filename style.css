@@ -21,8 +21,7 @@ body {
     width: 500px;
     display: flex;
     flex-direction: column;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px;
 }
 .screen {
     border: 1px solid white;
@@ -31,11 +30,21 @@ body {
     flex-direction: column;
     flex: 1;
     align-items: flex-end;
+    padding: 5px;
+}
+.screen div {
+    flex: auto;
+    border: 1px solid gray;
+}
+#s1 {
+    display: flex;
+    align-items:center; 
 }
 #s2 {
-    align-self: bottom;
+    display: flex;
+    align-items: bottom;
     flex: 2;
-
+    font-size: xx-large;
 }
 .buttons {
     flex: 4;
