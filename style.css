@@ -6,6 +6,34 @@ body {
     align-items: center;
     text-align: center;
 }
+.title {
+    font-weight: 900;
+    font-size: xx-large;
+    background-color: #161B22;
+    padding: 30px;
+    width: 100%;
+    margin-bottom:30px;
+}
+.section {
+    border: 1px solid white;
+    border-radius: 10px;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.screen {
+    border: 1px solid white;
+    border-radius: 10px;
+    height: 25%;
+    width: 95%;
+}
+.buttons {
+
+}
 .footer {
     margin-top:30px;
 }
