@@ -31,6 +31,7 @@ body {
     flex: 1;
     align-items: flex-end;
     padding: 5px;
+    margin: 5px;
 }
 .screen div {
     flex: auto;
@@ -48,6 +49,12 @@ body {
 }
 .buttons {
     flex: 4;
+    margin:10px;
+}
+.number {
+    background-color: #0D1117;
+    color:aliceblue;
+    font-size: xx-large;
 }
 .footer {
     margin-top:30px;
