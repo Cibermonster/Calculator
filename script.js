@@ -22,9 +22,12 @@ function number() {
             }
             s2.innerHTML += x;
             break;
-        case 'clr':
-            s2.innerHTML = "";
-            break;
+            case 'clr':
+                s2.innerHTML = "";
+                break;
+            case 'del':
+                s2.innerHTML = s2.innerHTML.slice(0,-1);
+                break;
 
     }
     
