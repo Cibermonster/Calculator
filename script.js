@@ -2,8 +2,9 @@
 const button = document.querySelectorAll("button");
 const s2 = document.getElementById("s2");
 
-function number() {
-    //max len 23
+function number(e) {
+    if (e) { console.log(e.keyCode); }
+    
     x = this.id
     switch(x) {
         case '0':
@@ -22,19 +23,27 @@ function number() {
             }
             s2.innerHTML += x;
             break;
-            case 'clr':
-                s2.innerHTML = "";
-                break;
-            case 'del':
-                s2.innerHTML = s2.innerHTML.slice(0,-1);
-                break;
+        case 'clr':
+            s2.innerHTML = "";
+            break;
+        case 'del':
+            s2.innerHTML = s2.innerHTML.slice(0,-1);
+            break;
+        case 'add':
+            
+            break;
 
     }
     
     //console.log("Len"+s2.innerHTML .length);
 }
 
-
+function add(x, y) {
+    return x + y;
+}
 
 
 button.forEach(button => button.addEventListener('click', number))
+document.addEventListener('keydown', function(event) {
+console.log(event.keyCode)
+}, true);
