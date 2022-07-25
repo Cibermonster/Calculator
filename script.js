@@ -27,11 +27,9 @@ function number(e) {
             s2.innerHTML += x;
             break;
         case 'Delete':
-        case 'clr':
             s2.innerHTML = "";
             break;
         case 'Backspace':
-        case 'del':
             s2.innerHTML = s2.innerHTML.slice(0,-1);
             break;
         case '+':
