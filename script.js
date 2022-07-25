@@ -3,13 +3,13 @@ const button = document.querySelectorAll("button");
 const s2 = document.getElementById("s2");
 
 function number(e) {
-    console.log(e);
+    //console.log(e.key);
     if (e.key === undefined) { 
-        x = this.id // CLICKY
+        x = this.id; // CLICKY
     } else {
-        x = e.key // KEYBOARD
+        x = e.key; // KEYBOARD
     }
-    console.log("AFTER: "+x);
+    //console.log("AFTER: "+x);
     switch(x) {
         case '0':
         case '1':
@@ -48,4 +48,4 @@ function add(x, y) {
 
 
 button.forEach(button => button.addEventListener('click', number))
-document.addEventListener('keydown',  event => number(event.key));
+document.addEventListener('keydown',  event => number(event));
