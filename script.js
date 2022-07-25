@@ -3,13 +3,12 @@ const button = document.querySelectorAll("button");
 const s2 = document.getElementById("s2");
 
 function number(e) {
-    console.log(e.key);
     if (e.key === undefined) { 
         x = this.id; // CLICKY
     } else {
         x = e.key; // KEYBOARD
     }
-    console.log("AFTER: "+x);
+    console.log("Key: "+x);
     switch(x) {
         case '0':
         case '1':
@@ -27,6 +26,7 @@ function number(e) {
             }
             s2.innerHTML += x;
             break;
+        case 'Delete':
         case 'clr':
             s2.innerHTML = "";
             break;
@@ -34,7 +34,7 @@ function number(e) {
         case 'del':
             s2.innerHTML = s2.innerHTML.slice(0,-1);
             break;
-        case 'add':
+        case '+':
             
             break;
 
