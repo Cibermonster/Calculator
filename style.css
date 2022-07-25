@@ -25,6 +25,7 @@ body {
 }
 .screen {
     border: 1px solid white;
+    background-color: #161B22;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
