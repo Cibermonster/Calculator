@@ -26,6 +26,11 @@ function number(e) {
             }
             s2.innerHTML += x;
             break;
+        case '.':
+            if (s2.innerHTML.indexOf('.') == -1) {
+                s2.innerHTML += ".";
+            }
+            break;
         case 'Delete':
             s2.innerHTML = "";
             break;
