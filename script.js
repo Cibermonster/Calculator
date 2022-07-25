@@ -22,9 +22,13 @@ function number() {
             }
             s2.innerHTML += x;
             break;
+        case 'clr':
+            s2.innerHTML = "";
+            break;
+
     }
     
-    console.log("Len"+s2.innerHTML .length);
+    //console.log("Len"+s2.innerHTML .length);
 }
 
 
