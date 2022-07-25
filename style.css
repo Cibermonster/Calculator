@@ -49,6 +49,14 @@ body {
 }
 .buttons {
     flex: 4;
+    margin:5px;
+}
+.buttons div {
+    display: flex;
+    flex:auto;
+}
+.buttons button {
+    flex: 1;
     margin:10px;
 }
 .number {
