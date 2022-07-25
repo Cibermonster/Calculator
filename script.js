@@ -20,7 +20,7 @@ function number(e) {
         case '7':
         case '8':
         case '9':        
-            if (s2.innerHTML.length >= 23) {
+            if (s2.innerHTML.length > 16) {
                 console.log("Too Long!");
                 return;
             }
@@ -31,6 +31,9 @@ function number(e) {
             break;
         case 'Backspace':
             s2.innerHTML = s2.innerHTML.slice(0,-1);
+            break;
+        case '+/-':
+            s2.innerHTML *= -1;
             break;
         case '+':
             
