@@ -1,12 +1,19 @@
 
-const numberbtn = document.querySelector("button");
+const button = document.querySelectorAll("button");
 const s2 = document.getElementById("s2");
 
-function number(x) {
+function number() {
+    //max len 23
+    x = this.id
+    if (s2.innerHTML.length >= 23) {
+        console.log("Too Long!");
+        return;
+    }
     s2.innerHTML += x;
-    console.log("Test");
+    console.log("Len"+s2.innerHTML .length);
 }
 
 
-numberbtn.addEventListener('click', myFunction());
 
+
+button.forEach(button => button.addEventListener('click', number))
