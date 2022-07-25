@@ -5,11 +5,25 @@ const s2 = document.getElementById("s2");
 function number() {
     //max len 23
     x = this.id
-    if (s2.innerHTML.length >= 23) {
-        console.log("Too Long!");
-        return;
+    switch(x) {
+        case '0':
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':        
+            if (s2.innerHTML.length >= 23) {
+                console.log("Too Long!");
+                return;
+            }
+            s2.innerHTML += x;
+            break;
     }
-    s2.innerHTML += x;
+    
     console.log("Len"+s2.innerHTML .length);
 }
 
