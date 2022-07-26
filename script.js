@@ -10,7 +10,7 @@ function number(e) {
     } else {
         x = e.key; // KEYBOARD
     }
-    //console.log("Key: "+x);
+    
     switch(x) {
         case '0':
         case '1':
@@ -45,6 +45,8 @@ function number(e) {
             break;
         case '+':
         case '-':
+        case '*':
+        case '/':
             s1.innerHTML = s2.innerHTML + " " + x;
             s2.innerHTML = "";
             break;
@@ -53,15 +55,13 @@ function number(e) {
             break;
 
     }
-    
-    //console.log("Len"+s2.innerHTML .length);
 }
 
 function operate(x, y) {
     var op = x.slice(-1);
     var x = parseFloat(x.slice(0,-1));
     var y = parseFloat(y);
-    //console.log(y)
+    
     op == "=" ? op = lastOp : lastOp = op // Use last operator if press =
 
     switch(op) {
@@ -71,11 +71,15 @@ function operate(x, y) {
         case '-':
             z = sub(x, y);
             break;
+        case '*':
+            z = mult(x, y);
+            break;
+        case '/':
+            z = div(x, y);
+            break;
     }
     s1.innerHTML = x+" "+op+" "+y+" =";
     s2.innerHTML = z;
-    //console.log(z);
-
 }
 
 function add(x, y) {
@@ -83,6 +87,12 @@ function add(x, y) {
 }
 function sub(x, y) {
     return x - y;
+}
+function mult(x, y) {
+    return x * y;
+}
+function div(x, y) {
+    return x / y;
 }
 
 
