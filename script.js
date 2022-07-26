@@ -56,11 +56,11 @@ function number(e) {
 }
 
 function operate(x, y) {
-    var operator = x.slice(-1);
-    var x = x.slice(0,-1)
-    console.log("Operator: "+operator);
-    console.log(x);
-    console.log(y);
+    var op = x.slice(-1);
+    var x = parseFloat(x.slice(0,-1));
+    var y = parseFloat(y);
+    
+    console.log(add(x, y));
 }
 
 function add(x, y) {
