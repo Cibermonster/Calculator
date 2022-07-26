@@ -33,6 +33,7 @@ function number(e) {
             }
             break;
         case 'Delete':
+            s1.innerHTML = "";
             s2.innerHTML = "";
             break;
         case 'Backspace':
@@ -45,6 +46,9 @@ function number(e) {
             s1.innerHTML = s2.innerHTML + " " + x;
             s2.innerHTML = "";
             break;
+        case '=':
+            operate(s1.innerHTML, s2.innerHTML)
+            break;
 
     }
     
@@ -52,7 +56,11 @@ function number(e) {
 }
 
 function operate(x, y) {
-
+    var operator = x.slice(-1);
+    var x = x.slice(0,-1)
+    console.log("Operator: "+operator);
+    console.log(x);
+    console.log(y);
 }
 
 function add(x, y) {
