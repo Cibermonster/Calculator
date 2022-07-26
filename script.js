@@ -19,6 +19,10 @@ function number(e) {
         case '8':
         case '9':
             if (s2.innerHTML.length > 16) { break; } // Too Long
+            if (s1.innerHTML.slice(-1) == "=") {
+                s1.innerHTML = "";
+                s2.innerHTML = "";
+             }
             s2.innerHTML += x;
             break;
         case '.':
