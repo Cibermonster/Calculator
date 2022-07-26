@@ -4,11 +4,17 @@ const s1 = document.getElementById("s1");
 const s2 = document.getElementById("s2");
 var lastOp = "";
 
+function reset() {
+    s1.innerHTML = "";
+    s2.innerHTML = "0";
+}
+
 function number(e) {
     x = (e.key === undefined) ? this.id : e.key; // Check input type
     
     switch(x) {
         case '0':
+            if (s2.innerHTML == "0") { break; } // Enough 0's
         case '1':
         case '2':
         case '3':
@@ -18,19 +24,18 @@ function number(e) {
         case '7':
         case '8':
         case '9':
+            if (s2.innerHTML == "0") { s2.innerHTML = ""; }
             if (s2.innerHTML.length > 16) { break; } // Too Long
             if (s1.innerHTML.slice(-1) == "=") {
-                s1.innerHTML = "";
-                s2.innerHTML = "";
-             }
+                reset();
+            }
             s2.innerHTML += x;
             break;
         case '.':
             if (s2.innerHTML.indexOf('.') == -1) { s2.innerHTML += "."; } // Check for existing decimal
             break;
         case 'Delete':
-            s1.innerHTML = "";
-            s2.innerHTML = "";
+            reset();
             break;
         case 'Backspace':
             s2.innerHTML = s2.innerHTML.slice(0,-1);
