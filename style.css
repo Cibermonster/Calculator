@@ -48,6 +48,7 @@ body {
     align-items: bottom;
     flex: 2;
     font-size: xx-large;
+    font-weight:600;
 }
 .buttons {
     flex: 4;

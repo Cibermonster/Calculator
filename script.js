@@ -49,10 +49,14 @@ function number(e) {
         case '/':
             if (s2.innerHTML == "") { s2.innerHTML = "0"; } // No input defaults to 0
             s1.innerHTML = s2.innerHTML + " " + x;
-            s2.innerHTML = "";
+            s2.innerHTML = "0";
             break;
         case 'Enter':
             //removeClasses();
+        case 'sqr':
+            s1.innerHTML = s2.innerHTML+"&#178; =";
+            s2.innerHTML = parseFloat(s2.innerHTML)*parseFloat(s2.innerHTML)
+            break;
         case '=':
             operate(s1.innerHTML, s2.innerHTML)
             break;
@@ -87,6 +91,7 @@ function operate(x, y) {
 
 button.forEach(button => button.addEventListener('click', number))
 document.addEventListener('keydown',  event => number(event));
+reset();
 
 /*function removeClasses() {
     button.forEach((btn) => {
