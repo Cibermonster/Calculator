@@ -17,17 +17,12 @@ function number(e) {
         case '6':
         case '7':
         case '8':
-        case '9':        
-            if (s2.innerHTML.length > 16) {
-                console.log("Too Long!");
-                return;
-            }
+        case '9':
+            if (s2.innerHTML.length > 16) { break; } // Too Long
             s2.innerHTML += x;
             break;
         case '.':
-            if (s2.innerHTML.indexOf('.') == -1) {
-                s2.innerHTML += ".";
-            }
+            if (s2.innerHTML.indexOf('.') == -1) { s2.innerHTML += "."; } // Check for existing decimal
             break;
         case 'Delete':
             s1.innerHTML = "";
@@ -43,9 +38,12 @@ function number(e) {
         case '-':
         case '*':
         case '/':
+            if (s2.innerHTML == "") { s2.innerHTML = "0"; } // No input defaults to 0
             s1.innerHTML = s2.innerHTML + " " + x;
             s2.innerHTML = "";
             break;
+        case 'Enter':
+            //removeClasses();
         case '=':
             operate(s1.innerHTML, s2.innerHTML)
             break;
@@ -57,7 +55,7 @@ function operate(x, y) {
     var op = x.slice(-1);
     var x = parseFloat(x.slice(0,-1));
     var y = parseFloat(y);
-    
+
     op == "=" ? op = lastOp : lastOp = op // Use last operator if press =
 
     switch(op) {
@@ -80,3 +78,10 @@ function operate(x, y) {
 
 button.forEach(button => button.addEventListener('click', number))
 document.addEventListener('keydown',  event => number(event));
+
+/*function removeClasses() {
+    button.forEach((btn) => {
+      btn.classList.remove("selected");
+    });
+  }*/
+  
