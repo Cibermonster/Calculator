@@ -48,8 +48,12 @@ function number(e) {
         case '*':
         case '/':
             if (s2.innerHTML == "") { s2.innerHTML = "0"; } // No input defaults to 0
+            if (s1.innerHTML) { operate(s1.innerHTML, s2.innerHTML) } // No input defaults to 0
             s1.innerHTML = removeCommas(s2.innerHTML) + " " + x;
             s2.innerHTML = "0";
+            break;
+        case '=':
+            operate(s1.innerHTML, s2.innerHTML);
             break;
         case 'Enter':
             //removeClasses();
@@ -57,9 +61,6 @@ function number(e) {
             s1.innerHTML = s2.innerHTML+"&#178; =";
             let num = parseFloat(removeCommas(s2.innerHTML))
             s2.innerHTML = addCommas(num*num);
-            break;
-        case '=':
-            operate(s1.innerHTML, s2.innerHTML)
             break;
 
     }
