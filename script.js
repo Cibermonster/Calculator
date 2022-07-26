@@ -9,7 +9,7 @@ function number(e) {
     } else {
         x = e.key; // KEYBOARD
     }
-    console.log("Key: "+x);
+    //console.log("Key: "+x);
     switch(x) {
         case '0':
         case '1':
@@ -49,6 +49,10 @@ function number(e) {
     }
     
     //console.log("Len"+s2.innerHTML .length);
+}
+
+function operate(x, y) {
+
 }
 
 function add(x, y) {
