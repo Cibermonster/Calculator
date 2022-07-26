@@ -60,7 +60,14 @@ function operate(x, y) {
     var x = parseFloat(x.slice(0,-1));
     var y = parseFloat(y);
     
-    console.log(add(x, y));
+    switch(op) {
+        case '+':
+        z = add(x, y);
+    }
+    s1.innerHTML = x+" "+op+" "+y+" = ";
+    s2.innerHTML = z;
+    //console.log(z);
+
 }
 
 function add(x, y) {
