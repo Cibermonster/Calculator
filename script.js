@@ -62,11 +62,8 @@ function operate(x, y) {
     var x = parseFloat(x.slice(0,-1));
     var y = parseFloat(y);
     //console.log(y)
-    if (op == "=") {
-        op = lastOp;
-    } else {
-        lastOp = op;
-    }
+    op == "=" ? op = lastOp : lastOp = op // Use last operator if press =
+
     switch(op) {
         case '+':
             z = add(x, y);
