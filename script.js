@@ -10,6 +10,7 @@ function number(e) {
     } else {
         x = e.key; // KEYBOARD
     }
+    //x = (e.key === undefined) ? this.id : e.key; // REVISIT THIS LINE
     
     switch(x) {
         case '0':
@@ -66,35 +67,21 @@ function operate(x, y) {
 
     switch(op) {
         case '+':
-            z = add(x, y);
+            z = x + y;
             break;
         case '-':
-            z = sub(x, y);
+            z = x - y;
             break;
         case '*':
-            z = mult(x, y);
+            z = x * y;
             break;
         case '/':
-            z = div(x, y);
+            z = x / y;
             break;
     }
     s1.innerHTML = x+" "+op+" "+y+" =";
     s2.innerHTML = z;
 }
-
-function add(x, y) {
-    return x + y;
-}
-function sub(x, y) {
-    return x - y;
-}
-function mult(x, y) {
-    return x * y;
-}
-function div(x, y) {
-    return x / y;
-}
-
 
 button.forEach(button => button.addEventListener('click', number))
 document.addEventListener('keydown',  event => number(event));
