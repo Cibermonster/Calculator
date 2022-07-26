@@ -5,12 +5,7 @@ const s2 = document.getElementById("s2");
 var lastOp = "";
 
 function number(e) {
-    if (e.key === undefined) { 
-        x = this.id;
-    } else {
-        x = e.key; // KEYBOARD
-    }
-    //x = (e.key === undefined) ? this.id : e.key; // REVISIT THIS LINE
+    x = (e.key === undefined) ? this.id : e.key; // Check input type
     
     switch(x) {
         case '0':
