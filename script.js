@@ -1,10 +1,11 @@
 
 const button = document.querySelectorAll("button");
+const s1 = document.getElementById("s1");
 const s2 = document.getElementById("s2");
 
 function number(e) {
     if (e.key === undefined) { 
-        x = this.id; // CLICKY
+        x = this.id;
     } else {
         x = e.key; // KEYBOARD
     }
@@ -41,7 +42,8 @@ function number(e) {
             s2.innerHTML *= -1;
             break;
         case '+':
-            
+            s1.innerHTML = s2.innerHTML + " " + x;
+            s2.innerHTML = "";
             break;
 
     }
