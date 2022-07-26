@@ -1,4 +1,3 @@
-
 const button = document.querySelectorAll("button");
 const s1 = document.getElementById("s1");
 const s2 = document.getElementById("s2");
@@ -24,11 +23,11 @@ function number(e) {
         case '7':
         case '8':
         case '9':
-            if (s2.innerHTML == "0") { s2.innerHTML = ""; }
             if (s2.innerHTML.length > 16) { break; } // Too Long
             if (s1.innerHTML.slice(-1) == "=") {
                 reset();
             }
+            if (s2.innerHTML == "0") { s2.innerHTML = ""; }
             s2.innerHTML += x;
             break;
         case '.':
@@ -49,14 +48,15 @@ function number(e) {
         case '*':
         case '/':
             if (s2.innerHTML == "") { s2.innerHTML = "0"; } // No input defaults to 0
-            s1.innerHTML = s2.innerHTML + " " + x;
+            s1.innerHTML = removeCommas(s2.innerHTML) + " " + x;
             s2.innerHTML = "0";
             break;
         case 'Enter':
             //removeClasses();
         case 'sqr':
             s1.innerHTML = s2.innerHTML+"&#178; =";
-            s2.innerHTML = parseFloat(s2.innerHTML)*parseFloat(s2.innerHTML)
+            let num = parseFloat(removeCommas(s2.innerHTML))
+            s2.innerHTML = addCommas(num*num);
             break;
         case '=':
             operate(s1.innerHTML, s2.innerHTML)
@@ -87,8 +87,7 @@ function operate(x, y) {
             break;
     }
     s1.innerHTML = x+" "+op+" "+y+" =";
-    s2.innerHTML = z;
-    console.log(numberWithCommas(z))
+    s2.innerHTML = addCommas(z);
 }
 
 button.forEach(button => button.addEventListener('click', number))
@@ -100,8 +99,11 @@ reset();
       btn.classList.remove("selected");
     });
   }*/
-function numberWithCommas(x) {
+function addCommas(x) {
     var parts = x.toString().split(".");
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return parts.join(".");
+}
+function removeCommas(x) {
+    return x.replaceAll(",", "");
 }
