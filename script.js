@@ -39,6 +39,7 @@ function number(e) {
             break;
         case 'Backspace':
             s2.innerHTML = s2.innerHTML.slice(0,-1);
+            if (!s2.innerHTML) { s2.innerHTML = "0"; } // No input defaults to 0
             break;
         case '+/-':
             s2.innerHTML *= -1;
@@ -87,6 +88,7 @@ function operate(x, y) {
     }
     s1.innerHTML = x+" "+op+" "+y+" =";
     s2.innerHTML = z;
+    console.log(numberWithCommas(z))
 }
 
 button.forEach(button => button.addEventListener('click', number))
@@ -98,4 +100,8 @@ reset();
       btn.classList.remove("selected");
     });
   }*/
-  
+function numberWithCommas(x) {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join(".");
+}
